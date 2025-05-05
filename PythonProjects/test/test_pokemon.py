@@ -5,6 +5,7 @@ URL = 'https://api.pokemonbattle.ru/v2'
 TOKEN = '**************'
 HEADER = {'Content-Type':'application/json', 'trainer_token':TOKEN}
 TRAINER_ID = '29437'
+NAME = "Ded"
 
 def test_status_code():
     response = requests.get(url = f'{URL}/pokemons', params = {'trainer_id' : TRAINER_ID})
@@ -12,4 +13,8 @@ def test_status_code():
 
 def test_part_of_response():
     response_get = requests.get(url = f'{URL}/pokemons', params = {'trainer_id' : TRAINER_ID})
-    assert response_get.json()["data"][4]["trainer_id"] == TRAINER_ID
+    assert response_get.json()["data"][0]["trainer_id"] == TRAINER_ID
+
+def test_part_trainer():
+    response_ded = requests.get(url = f'{URL}/trainers/29437')
+    assert response_ded.json()["trainer_name"] == NAME
