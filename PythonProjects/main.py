@@ -18,11 +18,11 @@ body_caught = {
     "pokemon_id": "307806"
 }
 
-'''response = requests.post(url = f'{URL}/pokemons', headers = HEADER, json = body_create,)
-print (response.status_code)'''
+response = requests.post(url = f'{URL}/pokemons', headers = HEADER, json = body_create,)
+print (response.status_code)
 
-'''response_change = requests.put(url = f'{URL}/pokemons', headers = HEADER, json = body_change,)
-print (response_change.status_code)'''
+response_change = requests.put(url = f'{URL}/pokemons', headers = HEADER, json = body_change,)
+print (response_change.status_code)
 
-'''response_change = requests.post(url = f'{URL}/trainers/add_pokeball', headers = HEADER, json = body_change,)
-print (response_change.status_code)'''
+response_change = requests.post(url = f'{URL}/trainers/add_pokeball', headers = HEADER, json = body_change,)
+print (response_change.status_code)
